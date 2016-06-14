@@ -2,8 +2,6 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'kien/ctrlp.vim'            " fuzzy find files
-
 NeoBundle 'tpope/vim-sensible'        " sane general defaults
 NeoBundle 'tpope/vim-repeat'          " makes some plugins repeatable
 NeoBundle 'tpope/vim-abolish'         " I mostly use :S for smart replace
@@ -11,22 +9,37 @@ NeoBundle 'tpope/vim-fugitive'        " git stuff, mostly :Gblame
 NeoBundle 'tpope/vim-surround'        " add and change braces and quotes
 NeoBundle 'tpope/vim-unimpaired'      " list navigation, option toggling
 NeoBundle 'tpope/vim-commentary'      " motion to comment out ranges
-NeoBundle 'tpope/vim-sleuth'          " automatic indentation settings
-NeoBundle 'tpope/vim-dispatch'        " run commands in background
-NeoBundle 'tpope/vim-speeddating.git' " increment dates and times
+"NeoBundle 'tpope/vim-sleuth'          " automatic indentation settings
+"NeoBundle 'tpope/vim-dispatch'        " run commands in background
+"NeoBundle 'tpope/vim-speeddating.git' " increment dates and times
 NeoBundle 'tpope/vim-tbone'           " interact with tmux panes
 NeoBundle 'idanarye/vim-merginal'     " work with git branches
 
-NeoBundle 'Lokaltog/vim-powerline'       " Better Statusline
+NeoBundle 'kien/ctrlp.vim'            " fuzzy find files
+NeoBundle 'easymotion/vim-easymotion'  "moving around
+NeoBundle 'ivanov/vim-ipython' "ipython integration
 NeoBundle 'ntpeters/vim-better-whitespace'  " show and fix trailing space
 
-NeoBundle 'davidhalter/jedi-vim'      " Autocomplete Python
 NeoBundle 'derekwyatt/vim-scala'      " Syntax Highlighting Scala
-" NeoBundle 'Shougo/neocomplete.vim'    " autocomplete scala
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'wellle/targets.vim'        " better vim targets
+
+NeoBundle 'jelera/vim-javascript-syntax' "vim javascript colors
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'henrik/vim-indexed-search'
+
+NeoBundle 'Shougo/neocomplete.vim'
+
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'flazz/vim-colorschemes'
 
 call neobundle#end()
 
 NeoBundleCheck
+
 "make vim repload vimrc on saves
 autocmd! bufwritepost .vimrc source %
 
@@ -35,7 +48,7 @@ filetype plugin indent on
 syntax on
 
 "Global options
-set nocp vb is ru ai hls ml nospell wmnu sc
+set nocp vb is ru ai hls ml nospell wmnu sc relativenumber
 
 "localization (English), noime
 set langmenu=en_US.UTF-8 enc=utf-8 imi=0 ims=0
@@ -69,7 +82,8 @@ set mouse=
 "colors
 set bg=dark
 set t_Co=256
-color wombat256mod
+"color wombat256mod
+silent! colorscheme hybrid
 "let g:solarized_termcolors = 256
 "let g:solarized_termtrans = 1
 "let g:solarized_visibility = "high"
@@ -118,8 +132,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 " map sort function to a key
 "vnoremap <Leader>s :sort<CR>
-map <Leader>s :!python %<CR>
-map <Leader>k :!python -u % >& %.out<CR>
 
 
 " ============================================================================
@@ -139,3 +151,14 @@ let g:jedi#usages_command = "<leader>z"
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+
+set wildignore+=*/target/*
+
+
+silent! nmap <C-p> :NERDTreeToggle<CR>
+silent! map <F3> :NERDTreeToggle<CR>
+silent! map <F4> :NERDTreeFind<CR>
+let g:NERDTreeToggle="<F3>"
+let g:NERDTreeMapActivateNode="<F4>"
+let g:NERDTreeMapPreview="<F5>"
