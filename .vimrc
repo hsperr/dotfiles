@@ -22,7 +22,6 @@ NeoBundle 'ntpeters/vim-better-whitespace'  " show and fix trailing space
 NeoBundle 'tmhedberg/matchit'  " show and fix trailing space
 
 "NeoBundle 'cjrh/vim-conda'
-"NeoBundle 'ensime/ensime-vim'     " work with git branches
 
 NeoBundle 'derekwyatt/vim-scala'      " Syntax Highlighting Scala
 NeoBundle 'christoomey/vim-tmux-navigator'
@@ -167,8 +166,5 @@ let g:NERDTreeToggle="<F3>"
 let g:NERDTreeMapActivateNode="<F4>"
 let g:NERDTreeMapPreview="<F5>"
 
-" scala ensime
-autocmd BufWritePost *.scala silent :EnTypeCheck
-nnoremap <localleader>t :EnTypeCheck<CR>
 
 set clipboard=unnamed
