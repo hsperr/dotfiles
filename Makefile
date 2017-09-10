@@ -1,5 +1,5 @@
 install: backup
-	/bin/ln -sfv ~/dotfiles/vimrc     ~/.vimrc
+	/bin/ln -sfv ~/dotfiles/.vimrc     ~/.vimrc
 
 backup:
 	mkdir -p ~/dotfiles/backups

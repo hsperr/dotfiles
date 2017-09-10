@@ -19,19 +19,23 @@ NeoBundle 'kien/ctrlp.vim'            " fuzzy find files
 NeoBundle 'easymotion/vim-easymotion'  "moving around
 NeoBundle 'ivanov/vim-ipython' "ipython integration
 NeoBundle 'ntpeters/vim-better-whitespace'  " show and fix trailing space
+NeoBundle 'tmhedberg/matchit'  " show and fix trailing space
+
+"NeoBundle 'cjrh/vim-conda'
+"NeoBundle 'ensime/ensime-vim'     " work with git branches
 
 NeoBundle 'derekwyatt/vim-scala'      " Syntax Highlighting Scala
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'wellle/targets.vim'        " better vim targets
+NeoBundle 'airblade/vim-gitgutter'        " better vim targets
+
+NeoBundle 'AndrewRadev/linediff.vim'        " diff two visual blocks
 
 NeoBundle 'jelera/vim-javascript-syntax' "vim javascript colors
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'henrik/vim-indexed-search'
-
-NeoBundle 'Shougo/neocomplete.vim'
 
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'flazz/vim-colorschemes'
@@ -162,3 +166,9 @@ silent! map <F4> :NERDTreeFind<CR>
 let g:NERDTreeToggle="<F3>"
 let g:NERDTreeMapActivateNode="<F4>"
 let g:NERDTreeMapPreview="<F5>"
+
+" scala ensime
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>t :EnTypeCheck<CR>
+
+set clipboard=unnamed
