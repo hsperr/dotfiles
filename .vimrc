@@ -16,27 +16,39 @@ NeoBundle 'tpope/vim-tbone'           " interact with tmux panes
 NeoBundle 'idanarye/vim-merginal'     " work with git branches
 
 NeoBundle 'kien/ctrlp.vim'            " fuzzy find files
-NeoBundle 'easymotion/vim-easymotion'  "moving around
+
+"NeoBundle 'easymotion/vim-easymotion'  "moving around
 NeoBundle 'ivanov/vim-ipython' "ipython integration
-NeoBundle 'ntpeters/vim-better-whitespace'  " show and fix trailing space
-NeoBundle 'tmhedberg/matchit'  " show and fix trailing space
+"NeoBundle 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
+"NeoBundle 'scrooloose/syntastic'               " Syntax checking plugin for Vim
+
+"NeoBundle 'ntpeters/vim-better-whitespace'  " show and fix trailing space
+"NeoBundle 'tmhedberg/matchit'  " show and fix trailing space
+
+
+"NeoBundle 'scrooloose/nerdtree'  " show and fix trailing space
+"NeoBundle 'Xuyuanp/nerdtree-git-plugin'  " show and fix trailing space
 
 "NeoBundle 'cjrh/vim-conda'
 
 NeoBundle 'derekwyatt/vim-scala'      " Syntax Highlighting Scala
+
 NeoBundle 'christoomey/vim-tmux-navigator'
+
 NeoBundle 'wellle/targets.vim'        " better vim targets
 NeoBundle 'airblade/vim-gitgutter'        " better vim targets
 
-NeoBundle 'AndrewRadev/linediff.vim'        " diff two visual blocks
+"NeoBundle 'AndrewRadev/linediff.vim'        " diff two visual blocks
 
 NeoBundle 'jelera/vim-javascript-syntax' "vim javascript colors
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+"NeoBundle 'nathanaelkane/vim-indent-guides'
 
-NeoBundle 'henrik/vim-indexed-search'
+"NeoBundle 'henrik/vim-indexed-search'
 
 NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'Lokaltog/powerline'
+
 NeoBundle 'flazz/vim-colorschemes'
 
 call neobundle#end()
@@ -146,25 +158,25 @@ cmap w!! w !sudo tee % >/dev/null
 " " cd ~/.vim/bundle
 " " git clone git://github.com/Lokaltog/vim-powerline.git
 set laststatus=2
-"
-" " Settings for jedi-vim
-" " cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
 
 set wildignore+=*/target/*
 
 
-silent! nmap <C-p> :NERDTreeToggle<CR>
+"silent! nmap <C-p> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeToggle<CR>
-silent! map <F4> :NERDTreeFind<CR>
-let g:NERDTreeToggle="<F3>"
-let g:NERDTreeMapActivateNode="<F4>"
-let g:NERDTreeMapPreview="<F5>"
+"silent! map <F4> :NERDTreeFind<CR>
+"let g:NERDTreeToggle="<F3>"
+"let g:NERDTreeMapActivateNode="<F4>"
+"let g:NERDTreeMapPreview="<F5>"
 
+"let g:pymode_python = 'python3'
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
 
 set clipboard=unnamed
