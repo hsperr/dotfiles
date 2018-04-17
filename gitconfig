@@ -1,0 +1,47 @@
+[core]
+	editor = /usr/bin/vim
+[user]
+	name = hsperr
+	email = henning.sperr@gmail.com
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+[difftool]
+    tool = vimdiff
+[diff]
+    promt = false
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = always
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red
+	new = green
+	whitespace = red reverse
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+    newHighlight = green bold 22
+[merge]
+    tool = splice
+[mergetool "splice"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
+[push]
+    default = current
+[rerere]
+	enabled = true
