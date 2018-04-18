@@ -4,6 +4,7 @@ install: backup
 	/bin/ln -sfv ~/dotfiles/git-completion.bash    ~/git-completion.bash
 	/bin/ln -sfv ~/dotfiles/iterm2_shell_integration.bash    ~/.iterm2_shell_integration.bash
 	/bin/ln -sfv ~/dotfiles/gitconfig    ~/.gitconfig
+	@if [ ! -e ~/.vim/bundle/neobundle.vim ]; then curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh; sh ./install.sh; rm ./install.sh; fi
 
 backup:
 	mkdir -p ~/dotfiles/backups
