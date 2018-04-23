@@ -4,15 +4,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tpope/vim-sensible'        " sane general defaults
 NeoBundle 'tpope/vim-repeat'          " makes some plugins repeatable
-NeoBundle 'tpope/vim-abolish'         " I mostly use :S for smart replace
-NeoBundle 'tpope/vim-fugitive'        " git stuff, mostly :Gblame
 NeoBundle 'tpope/vim-surround'        " add and change braces and quotes
-NeoBundle 'tpope/vim-unimpaired'      " list navigation, option toggling
 NeoBundle 'tpope/vim-commentary'      " motion to comment out ranges
-"NeoBundle 'tpope/vim-sleuth'          " automatic indentation settings
-"NeoBundle 'tpope/vim-dispatch'        " run commands in background
-"NeoBundle 'tpope/vim-speeddating.git' " increment dates and times
-NeoBundle 'tpope/vim-tbone'           " interact with tmux panes
+
+NeoBundle 'tpope/vim-fugitive'        " git stuff, mostly :Gblame
 NeoBundle 'idanarye/vim-merginal'     " work with git branches
 
 NeoBundle 'kien/ctrlp.vim'            " fuzzy find files
@@ -33,11 +28,10 @@ NeoBundle 'ivanov/vim-ipython' "ipython integration
 
 NeoBundle 'derekwyatt/vim-scala'      " Syntax Highlighting Scala
 
-NeoBundle 'christoomey/vim-tmux-navigator'
+" NeoBundle 'christoomey/vim-tmux-navigator'
 
 NeoBundle 'wellle/targets.vim'        " better vim targets
-NeoBundle 'airblade/vim-gitgutter'        " better vim targets
-
+"NeoBundle 'airblade/vim-gitgutter'        " better vim targets 
 "NeoBundle 'AndrewRadev/linediff.vim'        " diff two visual blocks
 
 NeoBundle 'jelera/vim-javascript-syntax' "vim javascript colors
@@ -103,7 +97,7 @@ silent! colorscheme hybrid
 "let g:solarized_termtrans = 1
 "let g:solarized_visibility = "high"
 "let g:solarized_contrast = "high"
-"color tomorrow-night
+color tomorrow-night
 
 "rebind leader key
 let mapleader=","
