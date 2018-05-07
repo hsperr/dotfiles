@@ -173,4 +173,6 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+set cm=blowfish2
+
 set clipboard=unnamed

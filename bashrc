@@ -2,9 +2,14 @@ alias ls="ls -GFlash"
 
 alias gcb="git checkout -b"
 alias ga="git add"
+alias gs="git status"
 alias gap="git add -p"
 alias gc="git commit -v"
 alias gp="git push"
+
+gf() {
+    git pull && git checkout -b "$1" && git push
+}
 
 alias shconfig="vim ~/.bashrc"
 alias shsource="source ~/.bashrc"
