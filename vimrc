@@ -6,28 +6,24 @@ NeoBundle 'tpope/vim-sensible'        " sane general defaults
 NeoBundle 'tpope/vim-repeat'          " makes some plugins repeatable
 NeoBundle 'tpope/vim-surround'        " add and change braces and quotes
 NeoBundle 'tpope/vim-commentary'      " motion to comment out ranges
-
 NeoBundle 'tpope/vim-fugitive'        " git stuff, mostly :Gblame
+NeoBundle 'tpope/vim-unimpaired'
+
 NeoBundle 'idanarye/vim-merginal'     " work with git branches
 
-NeoBundle 'kien/ctrlp.vim'            " fuzzy find files
+"NeoBundle 'kien/ctrlp.vim'            " fuzzy find files
+NeoBundle 'mileszs/ack.vim' " fuzzy find files with ag
+NeoBundle 'junegunn/fzf.vim'
 
 "NeoBundle 'easymotion/vim-easymotion'  "moving around
 NeoBundle 'ivanov/vim-ipython' "ipython integration
 "NeoBundle 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
 "NeoBundle 'scrooloose/syntastic'               " Syntax checking plugin for Vim
 
-"NeoBundle 'ntpeters/vim-better-whitespace'  " show and fix trailing space
-"NeoBundle 'tmhedberg/matchit'  " show and fix trailing space
-
-
 "NeoBundle 'scrooloose/nerdtree'  " show and fix trailing space
 "NeoBundle 'Xuyuanp/nerdtree-git-plugin'  " show and fix trailing space
 
-"NeoBundle 'cjrh/vim-conda'
-
 NeoBundle 'derekwyatt/vim-scala'      " Syntax Highlighting Scala
-
 " NeoBundle 'christoomey/vim-tmux-navigator'
 
 NeoBundle 'wellle/targets.vim'        " better vim targets
@@ -126,9 +122,6 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-" make : become ; for easier command access
-nnoremap ; :
-
 " clear search highlighting on ,/
 nmap <silent> ,/ :nohlsearch<CR>
 
@@ -170,9 +163,22 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nmap <Leader>; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
+
+nmap <M-k>    :Ack! "\b<cword>\b" <CR>
+
 set splitbelow
 set splitright
 
 set cm=blowfish2
 
 set clipboard=unnamed
+
+" Make ACK.vim use ag instead of ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+" Make fzf plugin find fzf installed by homebrew
+set rtp+=/usr/local/opt/fzf

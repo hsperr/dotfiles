@@ -14,6 +14,8 @@ gf() {
 alias shconfig="vim ~/.bashrc"
 alias shsource="source ~/.bashrc"
 
+alias vimconfig="vim ~/.vimrc"
+
 alias txmu="TERM=xterm-256color tmux"
 
 set -o vi
